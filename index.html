@@ -20,35 +20,40 @@
       align-items: center;
     }
 
+    /* klok onderaan, full width */
     #clock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       font-size: 70px;
       font-family: monospace;
       color: white;
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.6);
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
-      margin: auto 0; /* klok blijft in het midden */
     }
 
-    /* Container onderaan */
+    /* container voor balkjes net boven de klok */
     .signal-container {
       width: 100%;
       display: flex;
-      justify-content: space-between; /* trekt balkjes uit naar de kanten */
+      justify-content: center;
       position: fixed;
-      bottom: 20px;
-      padding: 0 20px;
+      bottom: 100px; /* net boven klok */
     }
 
     .signal-bars {
       display: flex;
-      flex-direction: row-reverse; /* van rechts naar links */
+      flex-direction: row-reverse; /* hoogste bar rechts */
       align-items: flex-end;
-      gap: 8px;
-      flex: 1;
+      gap: 6px;
+      height: 80px;
     }
 
     .bar {
-      flex: 1; /* vult de breedte */
-      max-width: 20px; /* optioneel: max breedte per balk */
+      width: 12px;
       background: #00ff88;
       border-radius: 2px;
       transition: height 0.3s ease;
@@ -56,8 +61,6 @@
   </style>
 </head>
 <body>
-  <div id="clock">--:--:--</div>
-
   <div class="signal-container">
     <div class="signal-bars" id="bars">
       <span class="bar"></span>
@@ -65,11 +68,10 @@
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
     </div>
   </div>
+
+  <div id="clock">--:--:--</div>
 
   <script>
     // klok
@@ -83,18 +85,15 @@
     updateClock();
     setInterval(updateClock, 1000);
 
-    // bereikbalken bewegen van rechts naar links
+    // bereikbalken bewegen omhoog/omlaag
     const bars = document.querySelectorAll(".bar");
-    let index = 0;
     function animateBars() {
-      bars.forEach((bar, i) => {
-        const pos = (index + i) % bars.length;
-        const height = (pos % 5 + 1) * 12; // varieert tussen 12 en 60px
-        bar.style.height = height + "px";
+      bars.forEach(bar => {
+        const randomHeight = Math.floor(Math.random() * 80) + 10; // hoogte tussen 10 en 90px
+        bar.style.height = randomHeight + "px";
       });
-      index = (index + 1) % bars.length;
     }
-    setInterval(animateBars, 300);
+    setInterval(animateBars, 500); // elke halve seconde nieuwe hoogte
   </script>
 </body>
 </html>
