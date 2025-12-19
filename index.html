@@ -25,12 +25,23 @@
       font-family: monospace;
       color: white;
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
-      margin-bottom: 30px;
+      margin-bottom: auto; /* duwt klok naar boven */
+      margin-top: 40px;
     }
 
-    /* Bereikbalkjes */
+    /* Container onderaan */
+    .signal-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: fixed;
+      bottom: 20px;
+    }
+
     .signal-bars {
       display: flex;
+      flex-direction: row-reverse; /* van rechts naar links */
       align-items: flex-end;
       gap: 6px;
       height: 40px;
@@ -56,12 +67,15 @@
 </head>
 <body>
   <div id="clock">--:--:--</div>
-  <div class="signal-bars" id="bars">
-    <span class="bar bar1"></span>
-    <span class="bar bar2"></span>
-    <span class="bar bar3"></span>
-    <span class="bar bar4"></span>
-    <span class="bar bar5"></span>
+
+  <div class="signal-container">
+    <div class="signal-bars" id="bars">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+      <span class="bar bar4"></span>
+      <span class="bar bar5"></span>
+    </div>
   </div>
 
   <script>
@@ -75,7 +89,7 @@
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Laat bereikbalkjes pulseren als stand-by indicator
+    // Laat bereikbalkjes pulseren
     setInterval(() => {
       document.getElementById("bars").classList.toggle("active");
     }, 1000);
