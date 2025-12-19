@@ -1,0 +1,92 @@
+/* Algemene stijl */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0078d7, #00a2ff);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login box */
+.login-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.login-box h1 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form elementen */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+
+/* Knop */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #005fa3;
+}
+
+/* Meldingen */
+.message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+.register-link a {
+  color: #0078d7;
+  text-decoration: none;
+}
+.register-link a:hover {
+  text-decoration: underline;
+}
