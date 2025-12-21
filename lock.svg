@@ -1,0 +1,41 @@
+<svg
+  width="80"
+  height="80"
+  viewBox="0 0 80 80"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-labelledby="lockTitle"
+  role="img"
+>
+  <title id="lockTitle">Lock icoon</title>
+
+  <g transform="translate(40,50)">
+    <!-- Body -->
+    <rect
+      x="-8"
+      y="-3"
+      width="16"
+      height="14"
+      fill="#ffffff"
+      stroke="#000000"
+      stroke-width="2"
+      rx="2"
+      ry="2"
+    />
+    <!-- Beugel -->
+    <path
+      d="M -5 -3 V -8 A 5 5 0 0 1 5 -8 V -3"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <!-- Sleutelgat -->
+    <circle
+      cx="0"
+      cy="3"
+      r="1.5"
+      fill="#000000"
+    />
+  </g>
+</svg>
+
