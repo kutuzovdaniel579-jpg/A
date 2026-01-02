@@ -86,7 +86,7 @@
   </div>
 
   <!-- klok -->
-  <div id="clock">--:--:--</div>
+  <div id="clock">10:07:777</div>
 
   <!-- balkjes -->
   <div class="signal-container" id="bars">
@@ -101,15 +101,6 @@
   </div>
 
   <script>
-    function updateClock() {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2,"0");
-      const m = String(now.getMinutes()).padStart(2,"0");
-      const s = String(now.getSeconds()).padStart(2,"0");
-      document.getElementById("clock").innerHTML = h+":"+m+":"+s;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
 
     const bars = document.querySelectorAll(".bar");
     function animateBars() {
